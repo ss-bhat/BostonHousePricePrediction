@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House price Prediction</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand"><b>Boston House Price Prediction</b></a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<div class="container main-section">
+	<div class="row">
+		<div class="col-md-12 text-center user-login-header">
+			<h1>Login Form</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main text-center">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
+					<div class="form-group">
+                        <form method="post">
+                            <input type="text" class="form-control" placeholder="User Name" id="usr", name="usr">
+				  		<input type="password" class="form-control" placeholder="Password" id="pwd", name="pwd"
+                               style="margin-top:15px">
+							<button type="button" class="btn btn-success" id="tl" name="tl" onclick="test_login()"
+									style="margin-top:40px;">Test Login</button>
+  						<button type="submit" class="btn btn-success" style="margin-top:40px;">Login</button>
+                        </form>
+                        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+function test_login(){
+	document.getElementById('usr').value="Swaroop"
+	document.getElementById('pwd').value="password"
+};
+</script>
+    <div>
+        {% if error %}
+        <p class = "error" style="color:red;"><strong>Login Error:</strong> {{ error }}</p>
+        {% endif %}</div>
+</div>
+{% for message in get_flashed_messages() %}
+<div class="flash">
+	<center>{{ message }}</center>
+</div>
+	{% endfor %}
+</body>
+</html>

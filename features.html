@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Boston Price API</title>
+    <title>House price Prediction</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand"><b>Boston House Price Prediction</b></a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class = "Fields" style="margin-top:80px">
+      <form method="POST" id="feat">
+          <p style="color: #000066;"><h3><center>Enter Json Data (Feature for Predicting House Price):</center></h3></p>
+            <center><textarea rows="16" cols="90" id="featu"
+              placeholder='Eg:
+   {
+    "CRIM": 0.06888,
+    "ZN": 0,
+    "INDUS": 2.46,
+    "CHAS": 0,
+    "NOX": 0.488,
+    "RM": 6.144,
+    "AGE": 62.2,
+    "DIS": 2.5979,
+    "RAD": 3,
+    "TAX": 193,
+    "PTRATIO": 17.8,
+    "B": 396.9,
+    "LSTAT": 9.45
+  }' name='featu' style="margin-top:40px; border:inset; background:#C0C0C0;"></textarea></center>
+          <form>
+          <center>
+              <button type="button" class="btn btn-success" id="td" name="td" onclick="test_data()"
+									style="margin-top:40px;">Test Data</button>
+              <button type="submit" class="btn btn-success" style="margin-top:40px;">Predict</button>
+          </center></form>
+
+  </form>
+  </div>
+  <script>
+function test_data(){
+    var data = '{ "CRIM": 0.03932, "ZN": 0, "INDUS": 3.41, "CHAS": 0, "NOX": 0.489, "RM": 6.405, "AGE": 73.9, "DIS": 3.0921, "RAD": 2, "TAX": 270, "PTRATIO": 17.8, "B": 393.55, "LSTAT": 8.2}';
+    console.log(data);
+    document.getElementById('featu').value=data
+};
+</script>
+  <div>
+        {% if error %}
+        <p class = "error" style="color:red; opacity: 0.6"><strong>Input Error:</strong></p>
+      <p class = "error" style="color:red;">
+          <li style="color:red; opacity: 0.6">Please make sure enter data is of type json.</li>
+          <li style="color:red; opacity: 0.6">Please make sure all feature values are of type numeric.</li>
+      <li style="color:red; opacity: 0.6">Need at least one valid key value pair to predict house price.</li>
+
+      </p>
+        {% endif %}</div>
+</div>
+  </body>
+</html>

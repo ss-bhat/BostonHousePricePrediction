@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Boston Price API</title>
+    <title>House price Prediction</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand"><b>Boston House Price Prediction</b></a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+      <center><h2>Predicted Boston House Price</h2></center>
+      <form><center><textarea rows="8" cols="50" name='feat' style="border:inset; background:#C0C0C0;">{{price}}
+      </textarea></center></form>
+</div>
+  <form>
+  <center><div><button type="button" class="btn btn-secondary"
+                       onclick="location.href = '/prediction'">Back</button></div></center>
+  </form>
+  </body>
+</html>
