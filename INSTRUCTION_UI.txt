@@ -1,0 +1,28 @@
+Instructions to Run UI: UI is easy follow than API
+
+Note: Deployed house price prediction in heroku cloud. Please see the link - https://priceprediction.herokuapp.com/
+
+- To Run this locally - run flask and follow the instruction on page
+- Please click on TestLogin (populates the login credentials) then click on login.
+- Similarly click on Test Data to populate Test Data.
+
+
+Note: Note atleast one valid feature is required to predict house price.
+
+
+Sample Test Data:
+  {
+	"CRIM": 0.29819,
+	"ZN": 0,
+	"INDUS": 6.2,
+	"CHAS": 0,
+	"NOX": 0.504,
+	"RM": 7.686,
+	"AGE": 17,
+	"DIS": 3.3751,
+	"RAD": 8,
+	"TAX": 307,
+	"PTRATIO": 17.4,
+	"B": 377.51,
+	"LSTAT": 3.92
+  }
